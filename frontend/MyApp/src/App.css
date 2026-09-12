@@ -1,0 +1,737 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background: #f5f7fa;
+  color: #172033;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3f6fa;
+}
+
+.login-card {
+  width: 440px;
+  background: white;
+  border-radius: 16px;
+  padding: 42px;
+  box-shadow: 0 15px 45px rgba(20, 35, 60, 0.08);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.login-subtitle {
+  text-align: center;
+  color: #718096;
+  margin: 12px 0 30px;
+}
+
+.role-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.role {
+  border: 1px solid #dce2ea;
+  background: white;
+  border-radius: 9px;
+  padding: 14px;
+  cursor: pointer;
+  color: #596579;
+  font-size: 15px;
+}
+
+.role span {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.role.active {
+  border-color: #2563eb;
+  background: #eff6ff;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.login-card label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 13px;
+  margin-bottom: 18px;
+  border: 1px solid #dce2ea;
+  border-radius: 8px;
+  outline: none;
+}
+
+.login-card input:focus {
+  border-color: #2563eb;
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.demo-text {
+  text-align: center;
+  color: #9aa4b2;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+}
+
+.sidebar {
+  width: 245px;
+  min-height: 100vh;
+  background: #172033;
+  color: white;
+  padding: 25px 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0 10px 30px;
+}
+
+.sidebar-logo .logo-icon {
+  width: 34px;
+  height: 34px;
+  font-size: 22px;
+}
+
+.sidebar-user {
+  border-top: 1px solid #2c374c;
+  border-bottom: 1px solid #2c374c;
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #2563eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+
+.sidebar-user strong {
+  display: block;
+  font-size: 14px;
+}
+
+.sidebar-user span {
+  display: block;
+  font-size: 12px;
+  color: #9ca8ba;
+  text-transform: capitalize;
+  margin-top: 3px;
+}
+
+nav {
+  margin-top: 25px;
+}
+
+.nav-item {
+  width: 100%;
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 13px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.nav-item span {
+  margin-right: 10px;
+}
+
+.logout-button {
+  margin-top: auto;
+  border: none;
+  background: transparent;
+  color: #aeb8c8;
+  padding: 13px 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  color: white;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main {
+  flex: 1;
+  padding: 40px;
+  max-width: 1500px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.topbar h1 {
+  margin: 0 0 5px;
+  font-size: 28px;
+}
+
+.topbar p {
+  margin: 0;
+  color: #758196;
+}
+
+.primary-button {
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  background: #1d4ed8;
+}
+
+.secondary-button {
+  border: 1px solid #d6dce5;
+  background: white;
+  color: #4b5563;
+  padding: 11px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.search-box {
+  background: white;
+  border: 1px solid #dce2ea;
+  border-radius: 9px;
+  width: 450px;
+  display: flex;
+  align-items: center;
+  padding: 0 13px;
+}
+
+.search-box span {
+  font-size: 24px;
+  color: #8c97a8;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 13px 10px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.patient-count {
+  color: #7c8798;
+  font-size: 14px;
+}
+
+/* =========================
+   PATIENT TABLE
+========================= */
+
+.patient-table-container {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e3e7ed;
+}
+
+.patient-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.patient-table th {
+  text-align: left;
+  padding: 16px 20px;
+  background: #f8fafc;
+  color: #788497;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.patient-table td {
+  padding: 17px 20px;
+  border-top: 1px solid #edf0f4;
+  font-size: 14px;
+}
+
+.patient-table tbody tr {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.patient-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.patient-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.small-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e8eefc;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.view-button {
+  border: none;
+  background: transparent;
+  color: #2563eb;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.empty {
+  text-align: center;
+  color: #8792a3;
+  padding: 40px !important;
+}
+
+/* =========================
+   MODALS
+========================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 100;
+}
+
+.patient-modal,
+.add-modal {
+  background: white;
+  border-radius: 14px;
+  width: 800px;
+  max-width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18);
+}
+
+.add-modal {
+  width: 850px;
+}
+
+.modal-header {
+  padding: 28px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.modal-label {
+  font-size: 11px;
+  color: #2563eb;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.modal-header h2 {
+  margin: 5px 0 5px;
+  font-size: 24px;
+}
+
+.close-button {
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 7px;
+  background: #f1f4f8;
+  color: #5e6979;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* =========================
+   PATIENT INFORMATION
+========================= */
+
+.patient-info-grid {
+  padding: 28px 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.info-item span {
+  display: block;
+  color: #8490a1;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.info-item strong {
+  font-size: 14px;
+}
+
+/* =========================
+   VACCINATIONS
+========================= */
+
+.vaccination-section {
+  padding: 0 30px 30px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.section-heading h3 {
+  margin: 0 0 4px;
+}
+
+.section-heading p {
+  margin: 0;
+  color: #8993a3;
+  font-size: 13px;
+}
+
+.vaccination-count {
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 7px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.vaccination-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e4e8ed;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.vaccination-table th {
+  text-align: left;
+  padding: 12px 15px;
+  background: #f8fafc;
+  color: #7a8697;
+  font-size: 12px;
+}
+
+.vaccination-table td {
+  padding: 14px 15px;
+  border-top: 1px solid #edf0f4;
+  font-size: 14px;
+}
+
+.no-vaccinations {
+  border: 1px solid #e4e8ed;
+  border-radius: 8px;
+  padding: 25px;
+  text-align: center;
+  color: #8993a3;
+  font-size: 14px;
+}
+
+/* =========================
+   ADD PATIENT FORM
+========================= */
+
+.form-grid {
+  padding: 28px 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  border: 1px solid #dce2ea;
+  border-radius: 8px;
+  padding: 12px;
+  outline: none;
+  background: white;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: #2563eb;
+}
+
+.optional {
+  color: #8a94a5;
+  font-weight: 400;
+}
+
+/* =========================
+   MODAL FOOTER
+========================= */
+
+.modal-footer {
+  padding: 18px 30px;
+  border-top: 1px solid #edf0f4;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+  .sidebar {
+    width: 70px;
+  }
+
+  .sidebar-logo span,
+  .sidebar-user div:last-child {
+    display: none;
+  }
+
+  .main {
+    padding: 25px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .patient-info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .sidebar {
+    display: none;
+  }
+
+  .main {
+    padding: 20px;
+  }
+
+  .topbar {
+    flex-direction: column;
+  }
+
+  .search-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .patient-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-table-container {
+    overflow-x: auto;
+  }
+
+  .patient-table {
+    min-width: 650px;
+  }
+
+}
+
+/* =========================
+   VACCINATION ACTIONS
+========================= */
+
+.vaccination-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-vaccine-button {
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-vaccine-button:hover {
+  background: #1d4ed8;
+}
+
+.add-vaccine-link {
+  display: block;
+  margin: 12px auto 0;
+  border: none;
+  background: transparent;
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* =========================
+   ADD VACCINATION MODAL
+========================= */
+
+.vaccination-overlay {
+  z-index: 200;
+}
+
+.vaccination-modal {
+  background: white;
+  border-radius: 14px;
+  width: 500px;
+  max-width: 100%;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+}
+
+.vaccination-form {
+  padding: 28px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
